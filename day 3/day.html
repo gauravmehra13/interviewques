@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>   
+</head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+<link rel="stylesheet" href="day.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<style>
+  h2 {font-family: "Audiowide", sans-serif;}
+    </style>
+<body>
+    <h1>Concept</h1>
+
+    <h3>Q1 Difference between flex row and column</h3>
+    <p>Flex row is a property of flex which is used to display the elements in row whereas flex column is used to display the elements in cloumn.</p>
+
+    <h3>Q2 Explain inline , internal and external stylesheet</h3>
+    <p>You can apply CSS to your webpage's HTML files using an inline style, internal stylesheet, or external stylesheet.<br>
+        Inline styles are applied directly to an element in your HTML code. They use the style attribute, followed by regular CSS properties<br>
+        HTML files with an internal stylesheet include a set of rules in their head section. CSS rules are wrapped in style tags.<br>
+        An HTML page styled by an external CSS stylesheet must reference the .css file in the document head. Once you create the CSS file, it must be uploaded to your server and linked in the HTML file with code. <br>
+
+    </p>
+
+    <h3>Q3 Justify-content allows you to do what?</h3>
+    <p>The justify-content property aligns the flexible container's items when the items do not use all available space on the main-axis (horizontally).</p>
+
+    <h3>Q4 Difference between absolute and relative positioning</h3>
+    <p>Ans Relative position allows positioning according to it's normal position whereas absolute position allows position allows according to it's first parent element. </p>
+
+    <h3>Q5 What is grid-template-columns used for?</h3>
+    <p>The grid-template-columns property specifies the number (and the widths) of columns in a grid layout. The values are a space separated list, where each value specifies the size of the respective column.</p>
+
+    <h3>Q6 What is the z-index in CSS?</h3>
+    <p>Ans The z-index property specifies the stack order of an element. <br>
+        An element with greater stack order is always in front of an element with a lower stack order.<br>
+        z-index property will not work if the position is static. </p>
+
+    <h3>Q7 What is the difference between padding and margin?</h3>
+    <p> Margin is the space around an element's border, while padding is the space between an element's border and the element's content.</p>
+
+    <h3>Q8 What is box sizing?</h3>
+    <p>The CSS box-sizing property allows us to include the padding and border in an element's
+        total width and height.<br>
+        By default, the width and height of an element is calculated like this:<br>
+         width + padding + border = actual width of an element<br>
+         height + padding + border = actual height of an element</p>
+
+    <h3>Q9 What is animation delay?</h3>
+    <p>Ans: The animation-delay property specifies a delay for the start of an 
+        animation.<br>
+        Negative values are also allowed. If using negative values, the animation will start as if it had 
+        already been playing for N seconds.</p>
+    
+    <h3>Q10 Which property you will use to merge cells vertically in grid?</h3>
+    <p>Ans: Grid Column</p>
+
+    <h3>Q11 Which property you will use to merge cells horizontally in grid?</h3>
+    <p>Ans: Grid Row</p>
+
+    <h3>Q12 Explain CSS box model</h3>
+    <p>Ans: In CSS, the term "box model" is used when talking about design and layout.<br>
+     The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, 
+     and the actual content.
+        </p>
+    <h3>Q 13 What is the difference between display none and visibility hidden?</h3>
+    <p><b>display:none</b> means that the tag in question will not appear on the page at all (although you can still interact with it through the dom). <br>
+        There will be no space allocated for it between the other tags.<br>
+        <b>visibility:hidden</b> means that unlike display:none, the tag is not visible, but space is allocated for it on the page.
+    </p>
+
+<h1>Implementation Easy</h1>
+
+<h3>Q1 Replicate the button on Masthead of PrepBytes</h3>
+ 
+
+<h3>Q2 Write a text and add any google font </h3>
+Here we will try to make the text "Hello" which is in "h2" in google font "audiowide"
+<h2>Hello</h2>
+
+<h3>Q3 create a box and increase its width on hover , add transition on hover</h3>
+<div class="box"></div>
+
+<h3>Q4 Create a circle using border radius </h3>
+<div class="circle"></div>
+
+<h3>Q5 Write code to show implementation of media queries</h3>
+<p> 
+    @media screen and (min-width: 350px) and (max-width: 850px) { /* … */ }
+</p>
+
+<h3>Q6 Write code to show any animation example</h3>
+
+<div class="box1">
+
+<div></div>
+</div>
+
+<h1>Implementation Difficult</h1>
+
+<h3>Q1 Create masterhead - add background image and put a text at the center , with button below it </h3>
+<div class="container">
+<img src="Pacino.jpg" alt="Pacino" width="150px" height="220px">
+<font size="3" color="red">
+    Al Pacino
+</font>
+<span class="material-icons">arrow_right</span>
+</div>
+
+<h3>Q2 Create header -- left side will have logo and right side will have 4 button </h3>
+ 
+<img src="logo.png" id="samsung" class="logo" width="80px" height="40px">
+
+<div class="header">
+
+<div class="buttons">
+<input type="button" value="home">
+<input type="button" value="menu">
+<input type="button" value="types">
+<input type="button" value="cart">
+</div>
+</div>
+
+<h3>Q3 Create 3 cards of height & width 200 px with texts in it , the card should be horizontally placed in web view and vertically in mobile view</h3>
+
+<div class="flexcontainer">
+<div class="card">
+    <img src="Lithium.png" width=" 200px" height="200px">
+    <p class="el1" style="color:blue;">Element 1.</p>
+    </div>
+
+
+    <div class="card">
+        <img src="Hydrogen.png" width=" 200px" height="200px">
+        <p class="el2 "style="color:blue;">Element 2.</p>
+
+        </div>
+
+        <div class="card">
+            <img src="Boron.png" width=" 200px" height="200px">
+            <p class="el3" style="color:blue;">Element 3.</p>
+            </div>
+
+        </div>
+    
+</div>
+<h3>Q4 Replicate the button on Masthead of PrepBytes, Change the background color of button for mobile view and ipad</h3>
+
+<div class="container2">
+<img src="masthead.svg" width="250px" height="300px">
+
+<font size="5" color="tomato"> Lorem ipsum dolor sit.<br><font>
+    <input type="button" class= "clickme" value="Click Me" >
+</div>
+
+
+<h4>Q5 Write code to show implementation of flex</h4>
+<div class="flexbox1">
+<div></div>
+<div></div>
+<div></div>
+
+</div>
+
+
+<h3>Q6 Show implementation of transition</h3>
+<div class="transi"></div>
+
+
+<h3>Q7 Show implementation of transformation</h3>
+<div class="transf"></div>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
