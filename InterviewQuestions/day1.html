@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day1</title>
+</head>
+<body>
+ 
+<h4>Q1 Difference between “ == “ and “ === “ operators.</h4>
+<p>The main difference between the == and === operator in javascript is that the == operator does the type conversion of the operands before comparison, whereas the === operator strictly compares the values as well as the data types of the operands.
+    <br>If the two values are not equal and of the same type , it will return false.
+</p>
+
+<h4>Q2 What is the spread operator?</h4>
+<p>The spread operator allows us to copy some part or all parts of an existing array or object into another array or object</p>
+
+<h4>Q3 What are the differences between var, let and const?</h4>
+<table border="4px" cellspacing="2px" width="70%">
+<tr>
+<th>Let</th>
+<th>Var</th>
+<th>Const</th>
+</tr>
+<tr>
+    <td>Local/Block Scope</td>
+    <td>Global Scope</td>
+    <td>Local/Block Scope</td>
+</tr>
+<tr>
+    <td>Can be modified but can't be redeclared</td>
+    <td>Can be redeclared and modified</td>
+    <td>Can't be redeclared and modified</td>
+</tr>
+</table>
+
+<h4>Q4 What is execution context?</h4>
+<ul>
+<li>Execution context is the one in which the current code actually runs and gets executed. </li>
+<li>It decides which code section has the access to the functions, variables, and ojects used in the code.</li>
+<li>After the code gets executed within the execution context, the context gets erased.</li>
+</ul>
+
+<h4>Q5 What is meant by first class functions</h4>
+<p>First-class functions are functions that are treated as variables. They can also be parsed into other functions as arguments.</p>
+
+<p>The functions can be assigned to any other variable or passed as an argument or can be returned by another function.</p>
+
+
+<h4>Q6 What are closures? Give an example of closure</h4>
+<p>A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function scope from an inner function.
+    In JavaScript, closures are created every time a function is created, at function creation time. </p>
+
+example:
+<pre style="color: red;">
+
+     let a=99
+      function test(){
+        
+        let child= function (){
+            console.log(a)
+        }
+        return child
+    }
+    let result=test()
+    result()
+   
+</pre>
+
+<h4>Explain call(), apply() and, bind() methods. Give an example of call(), apply(), bind()</h4>
+
+<ul>
+    <li><b>Call():</b>calls a function with a given this value and arguments provided individually.</li>
+    <li><b>Apply():</b>call() and apply() serve the exact same purpose. The only difference between how they work is that call() expects all parameters to be passed in individually, whereas apply() expects an array of all of our parameters.</li>
+    <li><b>Bind():</b>The bind() method creates a new function that, when called, has its this keyword set to the provided value. (<i>Using Bind an object can borrow a method from another object.</i>)</li>
+</ul>
+
+<i style="font-size:20px ;">example of Call and apply</i>
+<pre style="color: blue;">
+
+function test( a , b) {
+console.log(a , b) 
+console.log(this) 
+ }
+test.call({name: 'gaurav' }, 10 , 20)
+test.apply({name:'gaurav'} ,[10 , 20] )  
+</pre>
+
+<i style="font-size:20px ;">example of bind</i>
+
+<pre style="color: blue;">
+   let runner = {
+    name: 'Gaurav',
+    run: function(speed) {
+        console.log(this.name + ' runs at ' + speed + ' mph.');
+    }
+}
+
+let run = runner.run.bind(runner, 20);
+run();
+
+</pre>
+
+</body>
+</html>
