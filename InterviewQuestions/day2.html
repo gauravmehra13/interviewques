@@ -18,7 +18,7 @@
     <li>Create the global object i.e., window in the web browser or global in Node.js.</li>
         <li>Create the this object and bind it to the global object.</li>
         <li>Setup a memory heap for storing variables and function references.</li>
-        <li> Store the function declarations in the memory heap and variables within the global execution context with the initial values as undefined.</li>
+        <li>Store the function declarations in the memory heap and variables within the global execution context with the initial values as undefined.</li>
         <li>If a function is called, then the programs pauses in global execution context and control is passed to current execution phase</li>
         </ul>
 
@@ -37,7 +37,7 @@
 </p>
 
 <b>Syntax:</b>
-<pre>
+<pre style="color: blue;font-size:15px ;">
     let user={
         name: "Gaurav ",
         email: "gauravmehra2470@gmail.com",
@@ -51,6 +51,7 @@
     A constructor is a special function that creates and initializes an object instance of a class.
     *In JavaScript, a constructor gets called when an object is created using the new keyword.
     *The purpose of a constructor is to create a new object and set values for any existing object properties.
+    *In JavaScript, you can create multiple objects from a constructor function.
 
 Example:
 
@@ -66,23 +67,32 @@ console.log(user2)
 </pre>
 
 <h3>Q4 Explain prototypes</h3>
+<p>A prototype is aspecial type of object to which additional properties can be attached , which can be shared across all the instances of it's constructor function.</p>
 <ul>
-    <li>All the inbuilt functions/methhods on datatype are inside prototypes.</li>
+    <li>All the inbuilt functions/methods on datatype are inside prototypes.</li>
     <li>It basically defines how many methods are present inside the datatype.</li>
     <li>All JavaScript objects inherit properties and methods from a prototype.</li>
 </ul>
-<pre>example:
+<pre style="color: blue;font-size:15px ;">example:
 
-    let obj1 = { name: 'Gaurav' }
-let obj2 = new Object({name: 'Gaurav' })
-console.log(obj);
-
+    let parent = {
+        name: "Walter White",
+        nationality: "America",
+        occupation: "Chemistry Teacher"
+    };
+    
+    let child = {
+        name: "Walt Jr"
+    };
+    
+    child.__proto__ = parent;
+    console.log(child.occupation);
 </pre>
 
 <h3>Q5 What is prototype chain</h3>
 <p>Every object has a prototype, including the prototype object. This “chain” goes all the way back until it reaches an object that has no prototype, usually Object's prototype. </p>
 
-<pre>
+<pre style="color: purple;font-size:15px ;">
     example:
     const electronics= function(){};
 
@@ -131,14 +141,14 @@ If a method is not present , it will look up to it's creator in the prototype ch
 </pre>
 
 <h3>Q7 What are callbacks?</h3>
-<p>Any function that is passed as an argument to another function so that it can be executed in that other function is called as a callback function.
-    <br>
-    By definition, a callback is a function that you pass into another function as an argument for executing later.
-</p>
-
+<ul>
+<li>Any function that is passed as an argument to another function so that it can be executed in that other function is called as a callback function.</li>
+<li>By definition, a callback is a function that you pass into another function as an argument for executing later.</li>
+<li>Callbacks make sure that a function is not going to run before a task is completed but will run right after the task has completed, thereby allowing us asynchronous coding.</li>
+</ul>
 example:
 
-<pre>
+<pre style="color: red;font-size:15px ;">
     function test(a,b,c){
         a(c,b+c)
     }
