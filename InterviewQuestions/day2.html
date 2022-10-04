@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-2</title>
+</head>
+<body>
+<h1 align="center">Day-2</h1>
+
+<h3>Q1 What is creation phase and execution phase?</h3>
+
+    <b>Creation Phase:</b>When the JavaScript engine executes a script for the first time, it creates the global execution context.
+    <ul>
+    <li>During this phase, the JavaScript engine performs the following tasks:</li>
+   
+    <li>Create the global object i.e., window in the web browser or global in Node.js.</li>
+        <li>Create the this object and bind it to the global object.</li>
+        <li>Setup a memory heap for storing variables and function references.</li>
+        <li> Store the function declarations in the memory heap and variables within the global execution context with the initial values as undefined.</li>
+        <li>If a function is called, then the programs pauses in global execution context and control is passed to current execution phase</li>
+        </ul>
+
+
+    <b>Execution Phase</b>
+    <ul>
+    <li>During the execution phase, the JavaScript engine executes the code line by line, assigns the values to variables, and executes the function calls.</li>
+    <li>For each function call, the JavaScript engine creates a new function execution context.</li>
+    <li>The function execution context is similar to the global execution context. But instead of creating the global object, the JavaScript engine creates the arguments object that is a reference to all the parameters of the function:</li>
+    </ul>
+     
+<h3>Q2 What are objects in javascript?</h3>     
+<p>Objects are datastructures which hold the data in key value. It is therefore a non-primitive datatype
+    <br>Objects can be created using the Object() constructor or the object initializer / literal syntax.
+    <br>Objects can also have methods. Methods are stored in properties as function definitions. 
+</p>
+
+<b>Syntax:</b>
+<pre>
+    let user={
+        name: "Gaurav ",
+        email: "gauravmehra2470@gmail.com",
+        age:"24"
+    }
+    console.log(user)
+</pre>
+
+<h3>Q3 What are function constructors?</h3>
+<pre style="font-size:15px ;">
+    A constructor is a special function that creates and initializes an object instance of a class.
+    *In JavaScript, a constructor gets called when an object is created using the new keyword.
+    *The purpose of a constructor is to create a new object and set values for any existing object properties.
+
+Example:
+
+function User (name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+let user1 = new User('Gaurav', 25);
+let user2 = new User('Bruce Wayne', 27);
+console.log(user2)
+
+</pre>
+
+<h3>Q4 Explain prototypes</h3>
+<ul>
+    <li>All the inbuilt functions/methhods on datatype are inside prototypes.</li>
+    <li>It basically defines how many methods are present inside the datatype.</li>
+    <li>All JavaScript objects inherit properties and methods from a prototype.</li>
+</ul>
+<pre>example:
+
+    let obj1 = { name: 'Gaurav' }
+let obj2 = new Object({name: 'Gaurav' })
+console.log(obj);
+
+</pre>
+
+<h3>Q5 What is prototype chain</h3>
+<p>Every object has a prototype, including the prototype object. This “chain” goes all the way back until it reaches an object that has no prototype, usually Object's prototype. </p>
+
+<pre>
+    example:
+    const electronics= function(){};
+
+    electronics.prototype={
+        print(){
+            return "These are electronics"
+        }
+    };
+
+    const mobile= function(){};
+
+    mobile.prototype= Object.create(electronics.prototype);
+    mobile.prototype.print= function(){
+        return " I am mobile";
+    };
+
+
+    const simCard= function(){};
+
+    simCard.prototype = Object.create(mobile.prototype);
+    simCard.prototype.print = function(){
+        return "this is a SIM"
+    };
+
+    const sanjayElectronics= new electronics();
+    const Samsung = new mobile();
+    const Airtel = new simCard();
+
+    console.log(sanjayElectronics.print());
+    console.log(Samsung.print());
+    console.log(Airtel.print());
+
+If a method is not present , it will look up to it's creator in the prototype chain and find the method there.
+</pre>
+
+<h3>Q6 Give an example of inheritance using function constructor</h3>
+<b>Example:</b>
+<pre style="font-size: 15px ; color: red;"  >
+    function Test1()
+    {
+        this.name="Gaurav"
+        this.age="24"
+    }
+    let t= new Test1()
+    console.log(t)
+</pre>
+
+<h3>Q7 What are callbacks?</h3>
+<p>Any function that is passed as an argument to another function so that it can be executed in that other function is called as a callback function.
+    <br>
+    By definition, a callback is a function that you pass into another function as an argument for executing later.
+</p>
+
+example:
+
+<pre>
+    function test(a,b,c){
+        a(c,b+c)
+    }
+    
+    let x=(a,b) => {
+    
+    }
+    
+    test((a,b) => {console.log(a+b)}, 20, 40)
+    
+</pre>
+
+
+</body>
+</html>
