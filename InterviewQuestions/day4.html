@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day-4</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <h1 align="center">DAY-4</h1>
 
     <h3>Q1 How many operators do we have in JS ?</h3>
     <p>
-      An operator is used for manipulating a certain value or operand. Operators
-      are used to perform specific mathematical and logical computations on
-      operands.
+        An operator is used for manipulating a certain value or operand. Operators
+        are used to perform specific mathematical and logical computations on
+        operands.
     </p>
     <p>
-      There are different types of operators in JavaScript that are used for
-      performing different operations. Some of the JavaScript Operators include:
+        There are different types of operators in JavaScript that are used for
+        performing different operations. Some of the JavaScript Operators include:
     </p>
     <ul>
-      <li><b>Arithmetic Operators:</b>{+,-,/,*,%,**</li>
-      <li><b>Logical Operators:</b>{&&,||,!=,==,>,<,>=,<=}< /li></li>
-      <li><b>Bitwise Operators:</b>{&,|,~,^}</li>
+        <li><b>Arithmetic Operators:</b>{+,-,/,*,%,**</li>
+        <li><b>Logical Operators:</b>{&&,||,!=,==,>,<,>=,<=}< /li>
+        </li>
+        <li><b>Bitwise Operators:</b>{&,|,~,^}</li>
     </ul>
 
     <h3>Q2 What are pure functions?</h3>
     <p>
-      A Pure Function is a function (a block of code) that always returns the
-      same result if the same arguments are passed. It does not depend on any
-      state or data change during a program’s execution. Rather, it only depends
-      on its input arguments.
+        A Pure Function is a function (a block of code) that always returns the
+        same result if the same arguments are passed. It does not depend on any
+        state or data change during a program’s execution. Rather, it only depends
+        on its input arguments.
     </p>
     <ul>
-      <li>A function must pass two tests to be considered “pure”:</li>
-      <li>Same inputs always return same outputs</li>
-      <li>No side-effects</li>
+        <li>A function must pass two tests to be considered “pure”:</li>
+        <li>Same inputs always return same outputs</li>
+        <li>No side-effects</li>
     </ul>
     <pre style="color: purple; font: size 15px">
         Example:
@@ -44,20 +46,19 @@
         const add = (x, y) => x + y;
 
         add(2, 4); // 6
-     </pre
-    >
+     </pre>
 
     <h3>Q3 What is callback hell?</h3>
     <ul>
-      <li>
-        <b>Callback Hell:</b>Callback Hell is essentially nested callbacks
-        stacked below one another forming a pyramid structure.
-      </li>
-      <li>
-        Every callback depends/waits for the previous callback, thereby making a
-        pyramid structure that affects the readability and maintainability of
-        the code.
-      </li>
+        <li>
+            <b>Callback Hell:</b>Callback Hell is essentially nested callbacks
+            stacked below one another forming a pyramid structure.
+        </li>
+        <li>
+            Every callback depends/waits for the previous callback, thereby making a
+            pyramid structure that affects the readability and maintainability of
+            the code.
+        </li>
     </ul>
     <pre style="color: purple; font: size 15px">
     Example:<div>
@@ -86,27 +87,24 @@
 
     <h3>Q4 What are promises and why do we need them?</h3>
     <ul>
-      <li>
-        Promises are used to handle asynchronous operations in JavaScript.
-      </li>
-      <li>
-        They are easy to manage when dealing with multiple asynchronous
-        operations where callbacks can create callback hell leading to
-        unmanageable code.
-      </li>
-      <li>
-        A promise can be created using Promise constructor. Syntax var promise =
-        new Promise(function(resolve, reject){ //do something });
-      </li>
+        <li>promise are used to 'promise' that an act on something will occur when it is done on an asynchronous action.</li>
+        <li>The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.</li>
+        <li>
+            They are easy to manage when dealing with multiple asynchronous
+            operations where callbacks can create callback hell leading to
+            unmanageable code.
+        </li>
+        <li>
+            A promise can be created using Promise constructor. Syntax var promise =
+            new Promise(function(resolve, reject){ //do something });
+        </li>
     </ul>
 
-    <b
-      >When the producing code obtains the result, it should call one of the two
-      callbacks:</b
-    >
+    <b>When the producing code obtains the result, it should call one of the two
+        callbacks:</b>
     <ol>
-      <li>myResolve(result value)</li>
-      <li>myReject(error object)</li>
+        <li>myResolve(result value)</li>
+        <li>myReject(error object)</li>
     </ol>
 
     <pre style="color: purple; font: size 15px">
@@ -135,26 +133,27 @@
 
     <h3>Q5 What is promise chaining?</h3>
     <p>
-      Sometimes, you want to execute two or more related asynchronous
-      operations, where the next operation starts with the result from the
-      previous step.
+        Sometimes, you want to execute two or more related asynchronous
+        operations, where the next operation starts with the result from the
+        previous step.
     </p>
+    <p>Multiple use of .then method leads to promise chaining.</p>
     <b>Example:</b>
     <ol>
-      <li>
-        First, create a new promise that resolves to the number 10 after 3
-        seconds:
-      </li>
-      <li>Then, invoke the then() method of the promise</li>
-      <li>
-        The callback passed to the then() method executes once the promise is
-        resolved. In the callback, we show the result of the promise and return
-        a new value multiplied by two (result*2).
-      </li>
-      <li>
-        Because the then() method returns a new Promise with a value resolved to
-        a value, you can call the then() method on the return Promise like this:
-      </li>
+        <li>
+            First, create a new promise that resolves to the number 10 after 3
+            seconds:
+        </li>
+        <li>Then, invoke the then() method of the promise</li>
+        <li>
+            The callback passed to the then() method executes once the promise is
+            resolved. In the callback, we show the result of the promise and return
+            a new value multiplied by two (result*2).
+        </li>
+        <li>
+            Because the then() method returns a new Promise with a value resolved to
+            a value, you can call the then() method on the return Promise like this:
+        </li>
     </ol>
     <pre style="color: purple; font: size 15px">
 
@@ -175,14 +174,13 @@
         output:
         10
         20
-        </pre
-    >
+        </pre>
 
     <h3>Q6 Give an example of async/await</h3>
 
     <pre style="color: purple; font: size 15px">
 
-        
+
 async function asyncExam() {
     let x = new Promise((resolve, reject) => {
         let a = 500
@@ -206,34 +204,35 @@ asyncExam()
 
     <h3>Q7 What is the purpose of async/await keywords?</h3>
     <p>
-      <b>Async:</b> It simply allows us to write promises based code as if it
-      was synchronous and it checks that we are not breaking the execution
-      thread. It operates asynchronously via the event-loop. Async functions
-      will always return a value. It makes sure that a promise is returned and
-      if it is not returned then JavaScript automatically wraps it in a promise
-      which is resolved with its value.
+        <b>Async:</b> It simply allows us to write promises based code as if it
+        was synchronous and it checks that we are not breaking the execution
+        thread. It operates asynchronously via the event-loop. Async functions
+        will always return a value. It makes sure that a promise is returned and
+        if it is not returned then JavaScript automatically wraps it in a promise
+        which is resolved with its value.
     </p>
 
     <p>
-      <b>Await:</b> Await function is used to wait for the promise. It could be
-      used within the async block only. It makes the code wait until the promise
-      returns a result. It only makes the async block wait.
+        <b>Await:</b> Await function is used to wait for the promise. It could be
+        used within the async block only. It makes the code wait until the promise
+        returns a result. It only makes the async block wait.
     </p>
 
     <script>
-      let text = document.getElementsByClassName("hell");
-      let example = (text) => {
-        setTimeout(() => {
-          text[0].style.color = "red";
-          setTimeout(() => {
-            text[1].style.color = "green";
+        let text = document.getElementsByClassName("hell");
+        let example = (text) => {
             setTimeout(() => {
-              text[2].style.color = "blue";
+                text[0].style.color = "red";
+                setTimeout(() => {
+                    text[1].style.color = "green";
+                    setTimeout(() => {
+                        text[2].style.color = "blue";
+                    }, 1000);
+                }, 1000);
             }, 1000);
-          }, 1000);
-        }, 1000);
-      };
-      example(text);
+        };
+        example(text);
     </script>
-  </body>
+</body>
+
 </html>
