@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>DAY-5</h1>
+
+    <h3>Q1 What is the for-in loop in JavaScript? Give its syntax</h3>
+    <p>The for...in loop is used to loop through an object's properties.</p>
+    <pre style="font: size 15px; color: blueviolet">
+
+    Syntax
+The syntax of 'for..in' loop is:
+for (variablename in object) {
+   statement or block to execute
+}
+</pre
+    >
+
+    <h3>
+      Q2 Explain Local Scope, Block Scope, Functional Scope and Scope Chain in
+      javascript
+    </h3>
+
+    <b>Local Scope:</b
+    ><i
+      >Local scope contains things defined inside code blocks. A local variable
+      has local scope. Ex= let,const</i
+    ><br />
+    <b>Global Scope:</b
+    ><i
+      >Global scope contains all of the things defined outside of all code
+      blocks.</i
+    >
+    A global variable has global scope. A global variable is accessible from
+    anywhere in the code. Ex= var <br />
+    <b>Functional Scope:</b
+    ><i>Each function creates a new scope called function scope.</i>
+    <ul>
+      <li>
+        Variables defined inside a function cannot be accessed from anywhere
+        outside the function, because the variable is defined only in the scope
+        of the function.
+      </li>
+      <li>
+        However, a function can access all variables and functions defined
+        inside the scope in which it is defined.
+      </li>
+    </ul>
+
+    <b>Scope Chain:</b
+    ><i
+      >Scope Chain means that one variable has a scope (global or local/function
+      or block scope) is used by another variable or function having another
+      scope. <br />
+      This complete chain formation goes on and stops when the user wishes to
+      stop it according to the requirement.</i
+    >
+
+    <h3>
+      Q3 What is difference between null and undefined and where to use what?
+    </h3>
+    <p>
+      <b>Null:</b> It is the intentional absence of the value. It is one of the
+      primitive values of JavaScript. In JavaScript, null is a special value
+      that represents an empty or unknown value.
+      <br />
+      <b>Undefined:</b> Undefined is a datatype in JS. It means the value does
+      not exist in the compiler. It is the global object.
+    </p>
+
+    <h3>Q4 What is Symbol?</h3>
+    <ul>
+      <li>Symbol is a primitive data type of JavaScript</li>
+      <li>
+        You create a symbol by calling the Symbol() global factory function:
+        const mySymbol = Symbol()
+      </li>
+
+      <li>
+        Every time you invoke Symbol() we get a new and unique symbol,
+        guaranteed to be different from all other symbols:
+      </li>
+      <li>Symbols are often used to identify object properties.</li>
+      <li>
+        Often to avoid name clashing between properties, since no symbol is
+        equal to another. Or to add properties that the user cannot overwrite,
+        intentionally or without realizing.
+      </li>
+      <pre style="font: size 15px; color: blueviolet">
+    Example:
+
+    const NAME = Symbol()
+    const person = {
+      [NAME]: 'Batman'
+    }
+    
+    person[NAME] 
+    
+    const RUN = Symbol()
+    person[RUN] = () => 'Batman is fighting crime'
+    console.log(person[RUN]())
+    
+</pre
+      >
+    </ul>
+
+    <h3>Q5 Write code to explain map and filter in arrays?</h3>
+    <b>Map:</b>
+    <p>
+      map is a method built to take an array and modify every element in it.
+      Example: squaring every element in an array of numbers
+    </p>
+
+    <pre style="font: size 15px; color: blueviolet">
+  
+    let arr = [3 , 4 , 5] 
+let test = (val , index) => {
+    if(val%2 == 0) {
+        return val 
+    }
+}
+let result = arr.map(test)
+console.log(result, arr) 
+
+</pre
+    >
+
+    <b>Filter:</b
+    ><i
+      >filter is used to remove or filter out unwanted elements from the array.
+      It passes a callback to filter which gets run against every element in the
+      array.
+    </i>
+    <p>
+      If the value is true element remains in the resulting array but if the
+      return value is false the element will be removed for the resulting array.
+      <br />
+      filter does not update the existing array it will return a new filtered
+      array every time.
+    </p>
+    <pre style="font: size 15px; color: blueviolet">
+        let result= arr.filter((val,index)=>{
+            console.log(val,index)
+            return (val%2!=0)
+        })
+        
+        console.log(result);
+
+    </pre>
+
+    <h3>Q6 Explain passed by value and passed by reference</h3>
+    <b>Passed By Value:</b> works with primitive datatype
+    <ul>
+      <li>
+        Everytime we assign a value to a variable, a copy of that value is
+        created every single time.
+      </li>
+    </ul>
+    <b>Passed By Reference:</b>it works with non primitive datatype
+    <ul>
+      <li>
+        when you're creating an object , you're given a reference to that
+        object, if 2 objects hold the same reference, then changing the object
+        reflects in both variables.
+      </li>
+      <li>
+        In Pass by value, parameters passed as an arguments create its own copy
+      </li>
+      <li>
+        So any changes made inside the function is made to the copied value not
+        to the original value.
+      </li>
+    </ul>
+
+    <h3>Q7 Please explain Self Invoking Function and its code</h3>
+
+    <p>
+      Self-invoking functions in JavaScript are the anonymous self-executing
+      functions that are called after their definition. These JavaScript
+      functions can run immediately when followed by the parentheses set ().
+    </p>
+    <b>They are also called anonymous functions.</b>
+    <pre style="font: size 15px; color: blueviolet">
+
+    (function () {
+        document.getElementById("demo").innerHTML = "Hi! I am calling myself";
+      })();
+
+</pre
+    >
+  </body>
+</html>
