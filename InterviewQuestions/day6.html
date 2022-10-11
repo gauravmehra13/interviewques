@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day6</title>
+</head>
+
+<h3>Q1 Create a button , on click of which new Heading tag h1 should be added
+    with text as "MERN stack" on the screen above button</h3>
+<h1 id="first"></h1>
+<button onclick="addnew()">Add</button>
+<h3>Q2 Write code to get 1st H1 element from a webpage using DOM</h3>
+<pre style="font-size: 20px; color: blueviolet;">
+let elem=document.getElementbyTagName("h1")[0]
+</pre>
+
+<h3>Q3 Write code to implement timer clock using JS -- display HH:MM:SS -- the
+    time should keep updating every second</h3>
+<b id="HH" style="background-color: orange"></b>hr:
+<b id="MM" style="background-color: greenyellow"></b>mins:
+<b id="SS" style="background-color: aqua"></b>sec
+
+<h3>Q4 Create an HTML page having content as Hello world and a button named Replace Text. When user will click on this button page content should be changed to "Welcome to Elevation academy"</h3>
+
+<h2 id="Hello">Hello world</h2>
+<button onclick="replace()">Replace Text</button>
+
+<h3>Q5 Create an HTML page having content as Hello world and a button named
+    "Hide Text." When user will click on this button hide the "Hello World"
+    text</h3>
+
+    <div id="element">
+    <h1>Hello World</h1>
+</div>
+
+<div class="btn" onclick="hidebtn()">
+    <button>Hide Text</button>
+</div>
+
+<body>
+    <script>
+        //Q1 
+            function addnew(){
+            let firstTxt=document.getElementById("first")
+            firstTxt.innerText="MERN stack"
+            }
+        //Q3
+        function getTime() {
+            let date = new Date();
+            let HH = date.getHours();
+            let MM = date.getMinutes();
+            let SS = date.getSeconds();
+
+            document.getElementById("HH").innerText = HH;
+            document.getElementById("MM").innerText = MM;
+            document.getElementById("SS").innerText = SS;
+
+            setTimeout(getTime, 1000);
+        }
+
+        getTime();
+
+        //Q4    
+        function replace(){
+            let replaced=document.getElementById("Hello")
+            replaced.innerText="Welcome To Elevation Academy"
+
+        }
+
+        //Q5
+        function hidebtn() {
+            let divelem = document.getElementById("element");
+            let btnelem = document.getElementsByTagName("button")[0];
+
+            if (btnelem.innerText == "Show") {
+                divelem.style.display = "block";
+                btnelem.innerText = "Hide Text";
+            } else {
+                divelem.style.display = "none";
+                btnelem.innerText = "Show";
+            }
+        }
+
+        //Q6
+
+        let arr = [0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0];
+        let counter = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === 0) {
+                counter += 1;
+            }
+        }
+        console.log(counter);
+
+        //Q7
+
+        let arr1 = [10, 20, 23, 24, 44, 99];
+        let countEven = 0,
+            countOdd = 0;
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr1[i] % 2 == 0) {
+                countEven++;
+            } else {
+                countOdd++;
+            }
+        }
+        console.log(countEven, countOdd);
+        //Q8
+        var str = "AEIOUZXCVBNMa";
+        var c;
+        var count = 0;
+        for (let i = 0; i < str.length; i++) {
+            c = str[i];
+            c = c.toUpperCase();
+
+            if (c == "A" || c == "E" || c == "I" || c == "O" || c == "U") count++;
+        }
+
+        console.log(count);
+
+        //Q9
+        var student1={
+            name:"Peter Parker",
+            cgpa:[9,9,9,9,8]
+        }
+
+        var student2={
+            name:"Miles Morales",
+            cgpa:[9,9,9,9,8]
+        }
+        function func(arr1,arr2){
+
+            if(arr1.length==arr2.length){
+                let result=false;
+                for(let i=0;i<arr1.length;i++){
+                    if(arr1[i]==arr2[i])
+                    result=true;
+                    else 
+                    return false;
+                }
+                return result;
+            }
+            else
+            return false;
+        }
+        
+        const result=func(student1.cgpa,student2.cgpa);
+        if (result)
+            console.log("same")
+            else {
+            console.log("not same")
+        }
+    
+    </script>
+</body>
+
+</html>
